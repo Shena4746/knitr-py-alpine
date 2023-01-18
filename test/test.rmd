@@ -1,0 +1,44 @@
+# Tilte
+
+rmd for test.
+
+```{r, setup}
+# R
+library(reticulate)
+```
+
+
+```{python}
+# python
+x = [1,2,3]
+```
+
+```{r}
+# R
+library(magrittr)
+py$x %>% print()
+py$y <- head(cars)
+```
+
+```{python}
+# python
+print(y)
+```
+
+```{sh}
+# shell
+cat /etc/os-release;
+cat /proc/version
+```
+
+
+```{sh engine.opts='-l'}
+# shell
+Rscript -e "R.version" -e "library()"
+```
+
+```{sh engine.opts='-l'}
+# shell
+python --version;
+pip list
+```

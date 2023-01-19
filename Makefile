@@ -20,6 +20,10 @@ shell: init
 test: init
 	docker run -it --rm -v ${PWD}/test:${HOME_CONTAINER}/workdir ${IMAGE} sh test.sh
 
+.PHONY: knit
+knit: init
+	rm -f README.md && docker run -it --rm -v ${PWD}:${HOME_CONTAINER}/workdir ${IMAGE} Rscript -e "knitr::knit('README.rmd')"
+
 .PHONY: push
 push: init
 	docker push ${IMAGE}
